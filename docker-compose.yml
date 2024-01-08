@@ -129,7 +129,6 @@ services:
       context: fluentd/
       args:
         FLUENTD_VERSION: ${FLUENTD_VERSION}
-        ES_PLUGIN_VERSION: ${ES_PLUGIN_VERSION}
     volumes:
       - ./config/fluentd.conf:/opt/bitnami/fluentd/conf/fluentd.conf
     depends_on:
