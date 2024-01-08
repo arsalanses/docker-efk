@@ -125,7 +125,11 @@ services:
       retries: 120
 
   fluentd:
-    image: bitnami/fluentd:1
+    build:
+      context: fluentd/
+      args:
+        FLUENTD_VERSION: ${FLUENTD_VERSION}
+        ES_PLUGIN_VERSION: ${ES_PLUGIN_VERSION}
     volumes:
       - ./config/fluentd.conf:/opt/bitnami/fluentd/conf/fluentd.conf
     depends_on:
