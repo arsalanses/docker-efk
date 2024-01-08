@@ -130,7 +130,7 @@ services:
       args:
         FLUENTD_VERSION: ${FLUENTD_VERSION}
     volumes:
-      - ./config/fluentd.conf:/opt/bitnami/fluentd/conf/fluentd.conf
+      - ./config/fluentd.conf:/fluentd/etc/fluent.conf
     depends_on:
       es01:
         condition: service_healthy
