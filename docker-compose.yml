@@ -87,6 +87,8 @@ services:
       - xpack.security.transport.ssl.certificate_authorities=certs/ca/ca.crt
       - xpack.security.transport.ssl.verification_mode=certificate
       - xpack.license.self_generated.type=${LICENSE}
+      # Fluentd fix
+      - xpack.security.http.ssl.client_authentication=optional
     mem_limit: ${MEM_LIMIT}
     ulimits:
       memlock:
