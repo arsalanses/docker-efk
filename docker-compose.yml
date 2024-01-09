@@ -152,6 +152,8 @@ services:
     image: httpd:latest
     depends_on:
       - fluentd
+    networks:
+      - efk
     ports:
       - "127.0.0.1:8080:80"
     logging:
