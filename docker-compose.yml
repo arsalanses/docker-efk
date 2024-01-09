@@ -139,6 +139,7 @@ services:
         FLUENTD_VERSION: ${FLUENTD_VERSION}
     volumes:
       - ./config/fluentd.conf:/fluentd/etc/fluent.conf
+      - certs:/etc/td-agent/certs:ro
     depends_on:
       es01:
         condition: service_healthy
